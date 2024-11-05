@@ -1,0 +1,4 @@
+/usr/lib/liblccv.so
+/usr/include/lccv.hpp
+/usr/include/libcamera_app.hpp
+/usr/include/libcamera_app_options.hpp

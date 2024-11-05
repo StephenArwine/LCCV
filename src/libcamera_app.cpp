@@ -8,6 +8,8 @@
 #include "libcamera_app.hpp"
 #include "libcamera_app_options.hpp"
 
+std::unique_ptr<libcamera::CameraManager> camera_manager_;
+
 LibcameraApp::LibcameraApp(std::unique_ptr<Options> opts)
 	: options_(std::move(opts)), controls_(controls::controls)
 
@@ -35,10 +37,20 @@ void LibcameraApp::OpenCamera()
 	if (options_->verbose)
 		std::cerr << "Opening camera..." << std::endl;
 
-	camera_manager_ = std::make_unique<CameraManager>();
-	int ret = camera_manager_->start();
-	if (ret)
-		throw std::runtime_error("camera manager failed to start, code " + std::to_string(-ret));
+	bool cm_started = false;
+	
+	if (!camera_manager_)
+	{
+		std::cout << "Creating Camera Manager" << std::endl;
+		camera_manager_ = std::make_unique<CameraManager>();
+	}
+	if (!cm_started){
+		std::cout << "Starting Camera Manager" << std::endl;
+		int ret = camera_manager_->start();
+		if (ret)
+			throw std::runtime_error("camera manager failed to start, code " + std::to_string(-ret));
+		cm_started = true;
+	}
 
 	if (camera_manager_->cameras().size() == 0)
 		throw std::runtime_error("no cameras available");
