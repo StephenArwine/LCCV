@@ -25,7 +25,7 @@ public:
 
     //Video mode
     bool startVideo();
-    bool getVideoFrame(cv::Mat &frame, unsigned int timeout);
+    bool getVideoFrame(cv::Mat &frame, std::chrono::time_point<std::chrono::high_resolution_clock> &timeStamp, unsigned int timeout);
     void stopVideo();
 
     //Applies new zoom options. Before invoking this func modify options->roi.
