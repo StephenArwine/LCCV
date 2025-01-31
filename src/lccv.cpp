@@ -134,7 +134,7 @@ void PiCamera::stopVideo()
     frameready.store(false, std::memory_order_release);;
 }
 
-bool PiCamera::getVideoFrame(cv::Mat &frame, unsigned int timeout)
+bool PiCamera::getVideoFrame(cv::Mat &frame, std::chrono::time_point<std::chrono::high_resolution_clock> &timeStamp, unsigned int timeout)
 {
     if(!running.load(std::memory_order_acquire))return false;
     auto start_time = std::chrono::high_resolution_clock::now();
@@ -147,6 +147,7 @@ bool PiCamera::getVideoFrame(cv::Mat &frame, unsigned int timeout)
         timeout_reached = (std::chrono::high_resolution_clock::now() - start_time > std::chrono::milliseconds(timeout));
     }
     if(frameready.load(std::memory_order_acquire)){
+        timeStamp = std::chrono::high_resolution_clock::now();
         frame.create(vh,vw,CV_8UC3);
         uint ls = vw*3;
         mtx.lock();
