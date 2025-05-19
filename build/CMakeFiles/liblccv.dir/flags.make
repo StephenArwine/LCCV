@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -D_FILE_OFFSET_BITS=64 -Dliblccv_EXPORTS
 
-CXX_INCLUDES = -I/home/stephen/LCCV/include -I/usr/include/libcamera -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/home/stephen/LCCV/include -I/usr/local/include/libcamera -isystem /usr/include/opencv4
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -fPIC -Wall -Wextra -pedantic -Wno-unused-parameter -faligned-new -Werror -Wfatal-errors -Wno-psabi
 

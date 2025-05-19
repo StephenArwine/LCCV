@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/st/stm32cubeclt_1.17.0/CMake/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /opt/st/stm32cubeclt_1.17.0/CMake/bin/cmake -E rm -f
+RM = /usr/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -124,8 +124,8 @@ liblccv.so: CMakeFiles/liblccv.dir/src/lccv.cpp.o
 liblccv.so: CMakeFiles/liblccv.dir/src/libcamera_app.cpp.o
 liblccv.so: CMakeFiles/liblccv.dir/src/libcamera_app_options.cpp.o
 liblccv.so: CMakeFiles/liblccv.dir/build.make
-liblccv.so: /usr/lib/x86_64-linux-gnu/libcamera.so
-liblccv.so: /usr/lib/x86_64-linux-gnu/libcamera-base.so
+liblccv.so: /usr/local/lib/x86_64-linux-gnu/libcamera.so
+liblccv.so: /usr/local/lib/x86_64-linux-gnu/libcamera-base.so
 liblccv.so: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.6.0
 liblccv.so: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.6.0
 liblccv.so: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.6.0

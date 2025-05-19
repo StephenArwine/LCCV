@@ -104,6 +104,7 @@ public:
 	void StopCamera();
 
 	void setFrameRate(float fps);
+	void setFrameDurationLimits(int64_t dur);
 
     void ApplyRoiSettings();
 

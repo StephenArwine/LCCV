@@ -31,7 +31,9 @@ public:
 
     //Applies new zoom options. Before invoking this func modify options->roi.
     void ApplyZoomOptions();
+
     void setFrameRate(float fps);
+    void setFrameDurration(int64_t dur);
 
 protected:
     void run();

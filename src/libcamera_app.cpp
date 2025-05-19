@@ -253,6 +253,12 @@ void LibcameraApp::setFrameRate(float fps)
 	}	
 }
 
+void LibcameraApp::setFrameDurationLimits(int64_t dur)
+{
+	controls_.set(controls::FrameDurationLimits, libcamera::Span<const int64_t, 2>({dur, dur}));
+
+}
+
 void LibcameraApp::StopCamera()
 {
 	{

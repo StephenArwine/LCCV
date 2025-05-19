@@ -207,3 +207,8 @@ void PiCamera::ApplyZoomOptions()
 void PiCamera::setFrameRate(float fps){
     app->setFrameRate(fps);
 }
+
+void PiCamera::setFrameDurration(int64_t dur)
+{
+    app->setFrameDurationLimits(dur);
+}
