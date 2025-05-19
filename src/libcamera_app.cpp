@@ -250,7 +250,7 @@ void LibcameraApp::setFrameRate(float fps)
 	{
 		int64_t frame_time = 1000000 / fps; // in us
 		controls_.set(controls::FrameDurationLimits, libcamera::Span<const int64_t, 2>({frame_time, frame_time}));
-	}
+	}	
 }
 
 void LibcameraApp::StopCamera()

@@ -203,3 +203,7 @@ void PiCamera::ApplyZoomOptions()
 {
     app->ApplyRoiSettings();
 }
+
+void PiCamera::setFrameRate(float fps){
+    app->setFrameRate(fps);
+}
