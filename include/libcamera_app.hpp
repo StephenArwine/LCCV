@@ -103,6 +103,8 @@ public:
 	void StartCamera();
 	void StopCamera();
 
+	void setFrameRate(float fps);
+
     void ApplyRoiSettings();
 
 	Msg Wait();
